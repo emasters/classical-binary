@@ -1,4 +1,46 @@
-classical-binary
-================
+= An Experiment in Document Conversion and Generation
+Elmer R. Masters <elmer.masters@gmail.com>
+v.1.0, February 2013
+:toc:
+:numbered:
 
-A home for my binary econ paper from long ago.
+== Introduction
+
+This repo holds a set of files that I created as an experiment in getting old work out of proprietary formats. The idea is to take a MSFT Word file and convert itno something that is human readable, open formatted, and convertible.
+
+To do this is settled upon AsciiDoc to mark up the text of the paper. I chose AsciiDoc over Markdown because of the depth of eatures and availability of conversion tools.
+
+== The Process
+
+I decided to use a local install of Etherpad Lite (EL) as my primary text editor for this project. I did this because of a few features including autosave, versioning, and the potential for real time collaboration. I hoped that these features would provide me with a useful editing tool.
+
+Once EL setup and configured I was faced with the problem of how to get the text of the paper into the editor in the first place. My initial inclination was to retype the document, formating and edting as I went along. Faced with a 10,000 word doc and no appreciable typing skills, I was not happy with this option. After a bit of poking around in EL I founf its import features. TO get MSFT Word files imported required a bit more configuring, but it worked. I then imported the Word file into EL.
+
+The import process added the text of the document to the editor. It stripped all of the formatting from the text and inserted the 112 footnotes inline into the text. All of this was actually a good thing, making the process of marking up the doc with AsciiDoc easier. Using the original word processing file as a guide I worked through the document adding the necessary AsciiDoc markup to format the paper. The most tedious part was the 112 footnotes, but since AsciiDoc handles footnote with inline markup it moved along as fast as could be expected.
+
+In total I spent about 6 hours working on the AsciiDoc version of the document. The most time was spent tagging footnotes and figuring out the format for the bibliography footnote:[I am still not really pleased with te way the biblio looks. I think I can fix though on a later iteration.] The rest of the formating such as section titles, quotes, emphasis, and lists was straight forward though I did keep a copy of the AsciiDoc User Guide open in another tab to help out.
+
+I found the Etherpad Lite interface easy to work with and really appreciated the autosave and versioning features. EL doesn't know about AsciDoc markup though so that presented a challenge. In order to preview the work I had to export the file as text and then do the basic AsciiDoc to HTML, opening the resulting file in another browser tab to see what was going on. As I became more confident of my work, I checked less often so this was not much of an issue. I marked major revisons as saved revisions at the end of section of the document to give me a nice clean revision history. 
+
+Once I had a nice clean version that produced good HTML, I exported a final copy to my local computer and set about using the AsciiDoc utility A2X to generate the document in various formats. For this particular experiment I went with XHTML, PDF, and EPUB. THe generation/conversion process was marred only by my problems with understanding the format for the bibliography at the end of the document. Once I figure out just how to mark up the bibliography process was flawless. A2X first converts the AsciiDoc marked document into a DocBook XML file and then converts the DocBook file into other formats. THe process uses th estandard set of XML processing tools as well as CSS to generate the files. By using custom CSS files, the layout and formatiing of the various output files can be changed as needed.
+
+== The Files
+
+The files included in this repo are the ones used and generated as part of the process described above.
+
+[horizontal]
+KELSOFIN20130111.docx:: The MSFT Word file that was used for the starting point. This document began as a WordPerfect file in 1992 and was moved to Word in the mid-90's.
+KelsoPaper.txt:: This is the AsciiDoc version of the file as created and edited in Etherpad Lite. This is the file used to generate the other formats.
+KelsoPaper.pdf:: PDF file generated from KelsoPaper.txt using the command " a2x -v -f pdf KelsoPaper.txt "
+KelsoPaper.html:: XHTML file generated from KelsoPaper.txt using the command " a2x -v -f xhtml KelsoPaper.txt "
+docbook-xsl.css:: CSS file used to style KelsoPaper.html
+KelsoPaper.epub:: EPUB file generated from KelsoPaper.txt using the command " a2x -v -f epub KelsoPaper.txt "
+
+== Conclusion
+
+I am happy with the results of this experiment and hope to be able to further explore the use of Etherpad Lite and AsciiDoc as a tool set for creating free and open documents.
+
+
+
+
+
