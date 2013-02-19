@@ -1,0 +1,4 @@
+classical-binary
+================
+
+A home for my binary econ paper from long ago.
