@@ -32,7 +32,7 @@ The files included in this repo are the ones used and generated as part of the p
 KELSOFIN20130111.docx:: The MSFT Word file that was used for the starting point. This document began as a WordPerfect file in 1992 and was moved to Word in the mid-90's.
 KelsoPaper.txt:: This is the AsciiDoc version of the file as created and edited in Etherpad Lite. This is the file used to generate the other formats.
 KelsoPaper.pdf:: PDF file generated from KelsoPaper.txt using the command `a2x -v -f pdf KelsoPaper.txt`
-KelsoPaper.html:: XHTML file generated from KelsoPaper.txt using the command `a2x -v -f xhtml KelsoPaper.txt`
+KelsoPaper.html:: XHTML file generated from KelsoPaper.txt using the command `a2x -v -f xhtml KelsoPaper.txt`. You can view the result http://emasters.github.io/classical-binary/KelsoPaper.html[in your browser from the repo].
 docbook-xsl.css:: CSS file used to style KelsoPaper.html
 KelsoPaper.epub:: EPUB file generated from KelsoPaper.txt using the command `a2x -v -f epub KelsoPaper.txt`
 
